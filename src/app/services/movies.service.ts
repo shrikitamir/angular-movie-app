@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MoviesInterface } from '../models/Movies';
+import { MovieInterface } from '../models/Movie';
+import { ApiMovies } from '../models/ApiMovies';
 import { Observable } from 'rxjs';
-
-export type ApiResponse = {
-  Response: string;
-  Search: MoviesInterface[];
-  totalResults: string;
-  Error?: string;
-};
 
 @Injectable({
   providedIn: 'root',
@@ -18,11 +13,11 @@ export class MoviesService {
   movies: MoviesInterface[] = [];
   constructor(private http: HttpClient) {}
 
-  getMovies(name: string): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(`${this.apiUrl}&s=${name}`);
+  getMovies(name: string): Observable<ApiMovies> {
+    return this.http.get<ApiMovies>(`${this.apiUrl}&s=${name}`);
   }
 
-  getMovie(id: string): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(`${this.apiUrl}&i=${id}`);
+  getMovie(id: string): Observable<MovieInterface> {
+    return this.http.get<MovieInterface>(`${this.apiUrl}&i=${id}`);
   }
 }

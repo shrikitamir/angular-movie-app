@@ -2,7 +2,7 @@
   <div
     class="movie-container"
     *ngFor="let movie of movies"
-    (click)="getMovie.emit(movie.imdbID)"
+    (click)="searchSingleMovieEvent.emit(movie.imdbID)"
   >
     <img
       class="movie-poster"

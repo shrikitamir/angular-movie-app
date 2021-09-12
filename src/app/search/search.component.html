@@ -1,17 +1,18 @@
 <nav class="navbar">
-  <div class="search-container">
-    <input
-      [(ngModel)]="searchValue"
-      class="search-bar"
-      placeholder="Search a Movie"
-      type="text"
-    />
-    <button (click)="searchMovie.emit(searchValue)" class="search-button">
-      <mat-icon>search</mat-icon>
-    </button>
-  </div>
-  <div routerLink="/" class="app-logo-container">
-    <a class="app-name">MovieApp</a>
-    <img class="logo" src="../assets/logo.png" />
+  <form (submit)="searchMoviesEvent.emit(searchValue); $event.preventDefault()">
+    <div class="move-filter">
+      <input
+        [(ngModel)]="searchValue"
+        class="search-bar"
+        placeholder="Search a Movie"
+        name="name"
+        type="text"
+      />
+      <mat-icon (click)="searchMoviesEvent.emit(searchValue)">search</mat-icon>
+    </div>
+  </form>
+  <div class="app-logo-container">
+    <p (click)="resetSearchEvent.emit()" class="app-name">MovieApp</p>
+    <img routerLink="/" class="logo" src="../assets/logo.png" />
   </div>
 </nav>

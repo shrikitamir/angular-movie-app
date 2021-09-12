@@ -48,7 +48,7 @@
   word-wrap: break-word;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   .movie-container {
     height: fit-content;
     flex-direction: column;

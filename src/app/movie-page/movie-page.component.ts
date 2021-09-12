@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MovieInterface } from '../models/Movie';
 
 @Component({
   selector: 'app-movie-page',
@@ -6,12 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./movie-page.component.css'],
 })
 export class MoviePageComponent implements OnInit {
-  @Input() movie: any = '';
+  @Input() movie: MovieInterface;
   noPosterUrl: string = '../../assets/noPoster.png';
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.movie);
-  }
+  ngOnInit(): void {}
 }

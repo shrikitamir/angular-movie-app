@@ -30,19 +30,16 @@
     </p>
   </div>
   <div class="movie-details-right">
-    <p *ngIf="movie.Plot" ; else noMoviePlot>
+    <p>
       Description: <b>{{ movie.Plot }}</b>
     </p>
-    <p #noMoviePlot>No Movie Description</p>
-    <ng-template [ngIf]="movie.Ratings !== 'N/A'">
-      <div class="movie-rating-list-container">
-        <p>Ratings:</p>
-        <ul class="movie-ratings-list">
-          <li *ngFor="let rating of movie.Ratings">
-            {{ rating.Source }}: {{ rating.Value }}
-          </li>
-        </ul>
-      </div>
-    </ng-template>
+    <div class="movie-rating-list-container">
+      <p>Ratings:</p>
+      <ul class="movie-ratings-list">
+        <li *ngFor="let rating of movie.Ratings">
+          {{ rating.Source }}: {{ rating.Value }}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

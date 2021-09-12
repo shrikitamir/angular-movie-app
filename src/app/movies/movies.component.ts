@@ -8,7 +8,7 @@ import { MoviesInterface } from '../models/Movies';
 })
 export class MoviesComponent implements OnInit {
   @Input() movies: MoviesInterface[] = [];
-  @Output() getMovie: EventEmitter<string> = new EventEmitter();
+  @Output() searchSingleMovieEvent: EventEmitter<string> = new EventEmitter();
   noPosterUrl: string = '../../assets/noPoster.png';
 
   constructor() {}
