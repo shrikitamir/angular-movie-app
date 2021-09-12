@@ -1,0 +1,21 @@
+<div class="movies-container" *ngIf="movies.length">
+  <div
+    class="movie-container"
+    *ngFor="let movie of movies"
+    (click)="getMovie.emit(movie.imdbID)"
+  >
+    <img
+      class="movie-poster"
+      [src]="
+        movie.Poster !== 'N/A' ? movie.Poster : '../../assets/no-poster.png'
+      "
+      [alt]="movie.Title"
+    />
+    <div class="movie-title">
+      <p>{{ movie.Title }}</p>
+    </div>
+    <div class="movie-year">
+      <p>{{ movie.Year }}</p>
+    </div>
+  </div>
+</div>

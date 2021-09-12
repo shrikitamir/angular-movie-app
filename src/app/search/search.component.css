@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #292626;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 340px;
+}
+
+.search-bar {
+  width: 170px;
+  padding: 8px;
+  font-weight: 600;
+  color: black;
+  border-radius: 8px 0px 0px 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-button {
+  width: 60px;
+}
+
+.app-logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.app-name {
+  font-size: 22px;
+  transition: 0.2s;
+  font-weight: 500;
+  color: #787e83;
+  text-decoration: none;
+}
+
+.app-name:hover {
+  color: #dfdbdb;
+}
+
+.logo {
+  cursor: pointer;
+  margin-left: 10px;
+  width: 40px;
+}

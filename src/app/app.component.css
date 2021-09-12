@@ -1,0 +1,36 @@
+.main-image {
+  opacity: 0.7;
+  width: 100%;
+}
+
+.main-message {
+  position: absolute;
+  left: 10px;
+  top: 45px;
+  margin: 80px 0 0 80px;
+  font-size: 65px;
+  font-weight: 500;
+  color: rgb(197, 187, 187);
+}
+
+.small-message {
+  position: absolute;
+  left: 90px;
+  top: 220px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 800px) {
+  .main-message {
+    margin: 30px 0 0 30px;
+    font-size: 40px;
+  }
+
+  .small-message {
+    left: 40px;
+    top: 128px;
+    font-size: 17px;
+  }
+}

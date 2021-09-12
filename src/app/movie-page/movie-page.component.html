@@ -1,0 +1,48 @@
+<div class="movie-container">
+  <img
+    class="movie-poster"
+    [src]="movie.Poster !== 'N/A' ? movie.Poster : '../../assets/no-poster.png'"
+    [alt]="movie.Title"
+  />
+  <div class="movie-details-left">
+    <p>
+      Title: <b>{{ movie.Title }}</b>
+    </p>
+    <p>
+      Released: <b>{{ movie.Released }}</b>
+    </p>
+    <p>
+      Length: <b>{{ movie.Runtime }}</b>
+    </p>
+    <p>
+      Genre: <b>{{ movie.Genre }}</b>
+    </p>
+  </div>
+  <div class="movie-details-middle">
+    <p>
+      Director: <b>{{ movie.Director }}</b>
+    </p>
+    <p>
+      Cast: <b>{{ movie.Actors }}</b>
+    </p>
+    <p>
+      Language: <b>{{ movie.Language }}</b>
+    </p>
+  </div>
+  <div class="movie-details-right">
+    <p *ngIf="movie.Plot" ; else noMoviePlot>
+      Description: <b>{{ movie.Plot }}</b>
+    </p>
+    <p #noMoviePlot>No Movie Description</p>
+    <ng-template [ngIf]="movie.Ratings !== 'N/A'">
+      <div class="movie-rating-list-container">
+        <p>Ratings:</p>
+        <ul class="movie-ratings-list">
+          <li *ngFor="let rating of movie.Ratings">
+            {{ rating.Source }}: {{ rating.Value }}
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+</div>

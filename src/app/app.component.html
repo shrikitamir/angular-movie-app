@@ -1,0 +1,22 @@
+<app-search (searchMovie)="searchMovie($event)"></app-search>
+<ng-template [ngIf]="!movie && movies.length === 0">
+  <div class="container">
+    <img class="main-image" src="../assets/main-image.jpg" alt="movies" />
+    <div class="content">
+      <h1 *ngIf="error; else noError" class="main-message">{{ error }}</h1>
+      <ng-template #noError
+        ><h1 class="main-message">Welcome to MovieApp!</h1></ng-template
+      >
+      <p class="small-message">
+        Biggest movie search engine in the world! here you can find details
+        about every movie!
+      </p>
+    </div>
+  </div>
+</ng-template>
+<app-movies
+  (getMovie)="setMovie($event)"
+  *ngIf="!movie"
+  [movies]="movies"
+></app-movies>
+<app-movie-page *ngIf="movie" [movie]="movie"></app-movie-page>
